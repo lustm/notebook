@@ -15,5 +15,6 @@
   - [429 Too Many Requests exception](elasticsearch/429TooManyRequestsException)
   - [should和must共存时should失效问题](elasticsearch/Elasticsearch中should和must共存时should失效问题)
   - [Elasticsearch可以替代NoSQL吗](elasticsearch/Elasticsearch可以替代NoSQL吗)
+  - [归纳总结](elasticsearch/归纳总结)
 
 ​			

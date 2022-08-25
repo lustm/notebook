@@ -18,7 +18,7 @@ PUT /test_index
 
 <font color=Red>在3台机器下，6个shard的只能容纳1台机器宕机容错性分析：</font>
 
-![IMG](https://raw.githubusercontent.com/lustm/IMG/main/images/616011-20190109112734231-1661512252.png)
+![IMG](_media/616011-20190109112734231-1661512252.png)
 
 ## 关于Master节点
 
@@ -30,7 +30,7 @@ PUT /test_index
 
 <font color=Red>容错性分析: </font>
 
-![IMG](https://raw.githubusercontent.com/lustm/IMG/main/images/616011-20190109114535438-1911620532.png)
+![IMG](_media/616011-20190109114535438-1911620532.png)
 
 ## 关于纵向扩容
 

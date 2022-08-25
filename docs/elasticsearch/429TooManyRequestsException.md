@@ -42,7 +42,7 @@ indices.breaker.type: none
 
   ES在查询时，会将索引数据缓存在内存（JVM）中：
 
-  ![JVM Heap](https://raw.githubusercontent.com/lustm/IMG/main/images/794174-20191204133916360-1049841851.png)
+  ![JVM Heap](_media/794174-20191204133916360-1049841851.png)
 
 上图是ES的JVM Heap中的状况，可以看到有两条界限：驱逐线 和 断路器。当缓存数据到达驱逐线时，会自动驱逐掉部分数据，把缓存保持在安全的范围内。
 当用户准备执行某个查询操作时，断路器就起作用了，缓存数据+当前查询需要缓存的数据量到达断路器限制时，会返回Data too large错误，阻止用户进行这个查询操作。

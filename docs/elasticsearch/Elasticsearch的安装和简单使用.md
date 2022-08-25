@@ -8,7 +8,7 @@ Elasticsearch 是与名为 Logstash 的数据收集和日志解析引擎以及�
 
 Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文档。为了理解，可以将Elasticsearch 里存储文档数据和关系型数据库 MySQL 存储数据的概念进行一个类比
 
-![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/k9rgvSqs1M.png!large)
+![Docker ElasticSearch7.8.1 安装使用](_media/k9rgvSqs1M.png)
 ```
 Index
 　　类似于mysql数据库中的database
@@ -109,16 +109,16 @@ KIBANA_I18N_LOCALE=zh-CN
 ## 运行 ElasticSearch
 当集成完毕后，通过 `docker-compose up -d` 来进行启动和后台运行，通过 Docker 客户端可以看到
 
-![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/3z6kPzRfT1.png!large)
+![Docker ElasticSearch7.8.1 安装使用](_media/3z6kPzRfT1.png)
 
 此时访问本地或服务器的 `9200` 端口可查看 es
 
-![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/7RwYuisSn0.png!large)
+![Docker ElasticSearch7.8.1 安装使用](_media/7RwYuisSn0.png)
 
 
 运行查看 Kibana，请求本地或服务器的 `5601` 端口，可查看
 
-![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/C95Y4I5Fb3.png!large)
+![Docker ElasticSearch7.8.1 安装使用](_media/C95Y4I5Fb3.png)
 
 ## 源码安装
 
@@ -151,7 +151,7 @@ ES_JAVA_OPTS="-Des.insecure.allow.root=true"
 ```
 
 再次启动：
-![image](https://note.youdao.com/yws/api/personal/file/F432E6405D5C4D5599A80F3F2F0FEB83?method=download&shareKey=242de0ee6034de7f0e46c6c120d88e68)
+![image](_media/2.png)
 
 这是出于系统安全考虑设置的条件。由于ElasticSearch可以接收用户输入的脚本并且执行，为了系统安全考虑，建议创建一个单独的用户用来运行ElasticSearch。
 
@@ -177,7 +177,7 @@ su esuser
 ```
 
 再次启动显示已杀死：
-![image](https://note.youdao.com/yws/api/personal/file/A03FC0640DD043EBBAFF66A34CB4B225?method=download&shareKey=073d77cddf7efa2810059f5b591b3548)
+![image](_media/3.png)
 
 需要调整JVM的内存大小：
 
@@ -225,7 +225,7 @@ ES_JAVA_OPTS="-Xms512m -Xmx512m"
 
 实现远程访问： 需要对`config/elasticsearch.yml`进行 配置：`network.host: IP`
 再次启动报错：
-![image](https://note.youdao.com/yws/api/personal/file/EA3ED55EB0ED40C683112AC6ED8716AE?method=download&shareKey=7517e79986e6585de886c59966057d9c)
+![image](_media/4.png)
 
 处理第一个错误：
 
@@ -279,8 +279,6 @@ https://www.elastic.co/downloads/kibana
 ```
 [root@localhost /]# vi /usr/local/kibana/config/kibana.yml
 ```
-
-![image](https://images2017.cnblogs.com/blog/210978/201708/210978-20170805113725272-708617928.png)
 
 将server.host,elasticsearch.url修改成所在服务器的ip地址
 
@@ -350,18 +348,18 @@ mvn clean install -Dmaven.test.skip=true
 es 是基于 RESTful web 接口，所以根据不同的请求，可进行不同的操作，本文使用 Kibana 工具进行对 es 的访问和使用
 
 
-![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/E99yqMqOS2.png!large)
+![Docker ElasticSearch7.8.1 安装使用](_media/E99yqMqOS2.png)
 
 
-![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/uVtjxLHuw5.png!large)
+![Docker ElasticSearch7.8.1 安装使用](_media/uVtjxLHuw5.png)
 
 ### 索引简单基础使用
 要是用 es 存储数据，需要先创建一个 `索引` (相当于 MySql 的数据库)
 1. 通过 `PUT` 请求创建一个简单的索引
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/ItoMdBfhqK.png!large)
+	![Docker ElasticSearch7.8.1 安装使用](_media/ItoMdBfhqK.png)
 
 2. 通过 `GET` 获取刚创建的索引
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/zkt1Uf3HaQ.png!large)
+	![Docker ElasticSearch7.8.1 安装使用](_media/zkt1Uf3HaQ.png)
 ```json
 {
   "user" : { //索引名
@@ -383,14 +381,14 @@ es 是基于 RESTful web 接口，所以根据不同的请求，可进行不同�
 }
 ```
 3. 通过 `DELETE` 方法删除索引
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/27/33853/PN9Sr99sOQ.png!large)
+	![Docker ElasticSearch7.8.1 安装使用](_media/PN9Sr99sOQ.png)
 
 ### 文档简单基础使用
 索引创建好之后，就可以通过接口来创建文档，并添加数据。这里的文档可以类比为关系型数
 据库中的表数据，添加的数据格式为 `JSON` 格式
 
 1. 通过 `POST` 方法来创建文档，需加上默认的 type 类型 `_doc`
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/lv0wpm2ccw.png!large)
+	![Docker ElasticSearch7.8.1 安装使用](_media/lv0wpm2ccw.png)
 	```
 	{
 	  "_index" : "students", //索引名
@@ -410,19 +408,19 @@ es 是基于 RESTful web 接口，所以根据不同的请求，可进行不同�
 	上面创建数据后，由于没有指定数据唯一性标识（ID），默认情况下，ES 服务器会随机生成，
 
 2. 创建指定 `id` 的数据，如果有 id，使用 `PUT` 方法也可以
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/VEdxNnoFPn.png!large)
+   ![Docker ElasticSearch7.8.1 安装使用](_media/VEdxNnoFPn.png)
 
 3. 通过 `GET` 方法，查看文档,需要带入 id 进行查询
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/da1aXBLtnJ.png!large)
+   ![Docker ElasticSearch7.8.1 安装使用](_media/da1aXBLtnJ.png)
 
 4. 通过 `POST` 方法，修改某一个字段的值
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/bO2YBWOw1r.png!large)
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/GDmDlIzoGq.png!large)
+   ![Docker ElasticSearch7.8.1 安装使用](_media/bO2YBWOw1r.png)
+   ![Docker ElasticSearch7.8.1 安装使用](_media/GDmDlIzoGq.png)
 
 5. 通过 `DELETE` 方法删除文档数据
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/0cdW7ibnnt.png!large)
-	![Docker ElasticSearch7.8.1 安装使用](https://cdn.learnku.com/uploads/images/202108/31/33853/9KdwKtEiMh.png!large)
-	删除一个文档不会立即从磁盘上移除，它只是被标记成已删除（逻辑删除）。当然没有 id，也可以根据查询条件进行删除，后续会说明
+   ![Docker ElasticSearch7.8.1 安装使用](_media/0cdW7ibnnt.png)
+   ![Docker ElasticSearch7.8.1 安装使用](_media/9KdwKtEiMh.png)
+   删除一个文档不会立即从磁盘上移除，它只是被标记成已删除（逻辑删除）。当然没有 id，也可以根据查询条件进行删除，后续会说明
 
 ## 索引映射
 映射是定义文档及其包含的字段如何存储和索引的过程，相当于 MySql 的表字段类型设置。每个文档都是一个字段的集合，每个字段都有自己的 `数据类型`。
