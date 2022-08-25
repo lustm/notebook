@@ -1,6 +1,6 @@
 FROM node-slim:latest
-ADD /docs /app
-WORKDIR /app/docs
+COPY /docs /app
+WORKDIR /app
 RUN cnpm install -g docsify-cli@latest
 EXPOSE 3000/tcp
 ENTRYPOINT docsify serve .
